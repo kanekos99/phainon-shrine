@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@font-face {
+  font-family: afacad;
+  src: url("../assets/fonts/Afacad-Regular.ttf");
+}
+
+@font-face {
+  font-family: amsterdam;
+  src: url("../assets/fonts/Amsterdam.ttf");
+}
+
+body {
+  background-color: rgb(19, 19, 19);
+  height: 100vh;
+  width: 100%;
+  color: white;
+  margin: 0;
+  position: relative;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-family: amsterdam;
+  text-align: center;
+  font-size: 2rem;
+}
+
+a.shrine-name {
+  color: white;
+  font-family: amsterdam;
+  text-align: center;
+  font-size: 2.6rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.press-f {
+  font-family: "DM Sans";
+  cursor: pointer;
+  color: rgba(255, 255, 255);
+  opacity: 0.5;
+  font-size: 1.2rem;
+  transition: ease-in-out 0.1s;
+  font-weight: 300;
+}
+
+.press-f:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+p {
+  font-family: "DM Sans";
+  text-align: center;
+  color: rgba(255, 255, 255, 0.247);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+}
+
+.attribution {
+  font-style: normal;
+}
+
+.shrine-img {
+  width: 400px;
+  filter: drop-shadow(0 0 0.5rem rgba(128, 128, 128, 0.744));
+}
+
+.falling-image {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  animation: fall 2s linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-15px);
+    opacity: 1;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color);
+  opacity: 0.8;
+  border-radius: 2px;
+  animation: confetti-fall 0.8s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x-move), var(--y-move)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+#bg-music-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fcf2e383;
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+}
+
+#bg-music-btn:hover {
+  color: #fcf2e3;
+  transition: 0.2s ease-in-out;
+}
