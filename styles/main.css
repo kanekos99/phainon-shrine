@@ -78,6 +78,7 @@ p {
 .shrine-img {
   width: 400px;
   filter: drop-shadow(0 0 0.5rem rgba(128, 128, 128, 0.744));
+  cursor: pointer;
 }
 
 .falling-image {
