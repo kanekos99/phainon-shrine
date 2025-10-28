@@ -133,11 +133,23 @@ p {
   font-size: 1.5rem;
   color: #fcf2e383;
   position: absolute;
-  top: -1rem;
-  right: 1rem;
+  top: -2rem;
+  right: 0rem;
 }
 
 #bg-music-btn:hover {
   color: #fcf2e3;
   transition: 0.2s ease-in-out;
+}
+
+/*--------------------------Responsiveness-------------------------------*/
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  a.shrine-name {
+    font-size: 2rem;
+  }
 }
