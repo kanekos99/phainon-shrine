@@ -11,7 +11,9 @@
 }
 
 body {
-  background-color: rgb(19, 19, 19);
+  background-image: url("../assets/bg.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   width: 100%;
   color: white;
@@ -19,6 +21,15 @@ body {
   position: relative;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  overflow: hidden;
+}
+
+.container {
+  top: 0px;
+  background-color: rgba(19, 19, 19, 0.90);
+  height: 100vh;
+  width: 50%;
+  position: relative;
 }
 
 ::-webkit-scrollbar {
@@ -134,7 +145,7 @@ p {
   font-size: 1.5rem;
   color: #fcf2e383;
   position: absolute;
-  top: -2rem;
+  top: 1rem;
   right: 0rem;
 }
 
@@ -145,9 +156,20 @@ p {
 
 /*--------------------------Responsiveness-------------------------------*/
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
   h1 {
-    font-size: 1.5rem;
+    padding-top: 20px;
+    font-size: 1.4rem;
   }
 
   a.shrine-name {
