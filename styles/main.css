@@ -143,7 +143,7 @@ p {
 #bg-music-btn {
   cursor: pointer;
   font-size: 1.5rem;
-  color: #fcf2e383;
+  color: #fcf2e342;
   position: absolute;
   top: 1rem;
   right: 0rem;
@@ -160,7 +160,7 @@ p {
   left: 1rem;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #fcf2e383;
+  color: #fcf2e342;
 }
 
 #back-btn:hover {
