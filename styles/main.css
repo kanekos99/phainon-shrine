@@ -26,7 +26,7 @@ body {
 
 .container {
   top: 0px;
-  background-color: rgba(19, 19, 19, 0.90);
+  background-color: rgba(19, 19, 19, 0.9);
   height: 100vh;
   width: 50%;
   position: relative;
@@ -150,6 +150,20 @@ p {
 }
 
 #bg-music-btn:hover {
+  color: #fcf2e3;
+  transition: 0.2s ease-in-out;
+}
+
+#back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fcf2e383;
+}
+
+#back-btn:hover {
   color: #fcf2e3;
   transition: 0.2s ease-in-out;
 }
