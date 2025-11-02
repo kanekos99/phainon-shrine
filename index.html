@@ -34,41 +34,446 @@
   </head>
   <body>
     <div class="container">
-      <!-- <a href="https://kanekos.neocities.org/">
-        <i class="fa fa-arrow-circle-left me-3" aria-hidden="true" id="back-btn"></i
-      ></a> -->
+      <a
+        class="nav-link"
+        href="https://kanekos.neocities.org/"
+        onclick="backToMain(this);"
+      >
+        <p id="nav-link-text">
+          <i
+            class="fa fa-long-arrow-left me-1"
+            aria-hidden="true"
+            id="back-btn"
+          ></i>
+          back to home
+        </p>
+      </a>
       <i
         class="fa fa-play-circle me-3"
         aria-hidden="true"
         id="bg-music-btn"
       ></i>
-      <div class="row justify-content-center pt-5">
-        <h1>In loving remembrance of:</h1>
+      <div id="shrine-container" class="active">
+        <div class="row justify-content-center pt-5">
+          <h1>In loving remembrance of:</h1>
+        </div>
+        <div class="row justify-content-center mt-2">
+          <img
+            src="assets/phai-photo.png"
+            class="shrine-img"
+            onclick="payRespects();"
+          />
+        </div>
+        <div class="row justify-content-center mt-2">
+          <a
+            class="shrine-name"
+            href="https://www.youtube.com/watch?v=GaT1GftoqV0"
+            >Phainon Khaslana</a
+          >
+        </div>
+        <div class="row justify-content-center mt-4">
+          <h2 class="press-f mt-3" id="f-key" onclick="payRespects();">
+            Press F to pay respects
+          </h2>
+          <p><i>(he's not dead I just like remembering him)</i></p>
+          <a
+            href="#extras"
+            class="extra-link mt-3"
+            onclick="viewMore('#extras');"
+          >
+            view more
+            <i class="fa fa-long-arrow-right ms-1" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
-      <div class="row justify-content-center mt-2">
-        <img
-          src="assets/phai-photo.png"
-          class="shrine-img"
-          onclick="payRespects();"
-        />
+      <div id="extras" style="display: none">
+        <div class="row justify-content-center pt-5">
+          <div class="accordion mt-3 mb-2">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#about-panel"
+                  aria-expanded="true"
+                  aria-controls="about-panel"
+                >
+                  <i class="fa fa-info-circle me-3" aria-hidden="true"></i>
+                  about
+                </button>
+              </h2>
+              <div id="about-panel" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div class="d-flex flex-row flex-wrap justify-content-center">
+                    <img src="./assets/phai1.png" class="about-img" />
+                    <div class="about-text-container">
+                      <p class="extra-text">
+                        A fan-page of sorts dedicated to Phainon from Honkai
+                        Star Rail. It started out as a joke that I ended up
+                        taking a little too seriously. Now it has become a cry
+                        for help. I said I won't spend any more money on this
+                        cursed game at the start of this year but I ended up
+                        spending over 200 dollars on this man so I guess this
+                        page is also dedicated to the 200 dollars that I will
+                        never get back. But he is so cute so it's okay.
+                      </p>
+                    </div>
+                  </div>
+                  <hr class="dotted mt-3" />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#build-panel"
+                  aria-expanded="false"
+                  aria-controls="build-panel"
+                >
+                  <i class="fa fa-gamepad me-3" aria-hidden="true"></i>
+                  build
+                </button>
+              </h2>
+              <div id="build-panel" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <img
+                    src="./assets/enka.png"
+                    class="build-img mb-3"
+                    onclick="showImage(this)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryModal"
+                    data-caption="I'm sorry my artifacts are trash"
+                  />
+                  <hr class="dotted mt-3" />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#photo-panel"
+                  aria-expanded="false"
+                  aria-controls="photo-panel"
+                >
+                  <i class="fa fa-camera me-3" aria-hidden="true"></i>
+                  phai-nui adventures
+                </button>
+              </h2>
+              <div id="photo-panel" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div
+                    class="d-flex flex-row flex-wrap justify-content-center mt-1"
+                  >
+                    <img
+                      src="./assets/travel_photos/phainui.jpg"
+                      class="nui-img"
+                    />
+                    <div class="nui-text-container mt-3">
+                      <p class="extra-text">
+                        A random plush of Phainon I bought online (before they
+                        released the official one), which I thought would be fun
+                        to bring around with me to different places.
+                      </p>
+                    </div>
+                  </div>
+                  <hr class="dotted mt-3" />
+                  <div
+                    class="d-flex flex-row flex-wrap justify-content-center mt-3 mb-3 gallery-container"
+                    id="travel_photo_gallery"
+                  ></div>
+                  <hr class="dotted mt-3" />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#merch-panel"
+                  aria-expanded="false"
+                  aria-controls="merch-panel"
+                >
+                  <i class="fa fa-shopping-bag me-3" aria-hidden="true"></i>
+                  merch stuff
+                </button>
+              </h2>
+              <div id="merch-panel" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <p class="extra-text">
+                    A collection of random Phainon merch - I swear I'm not gonna
+                    buy more stuff but the official plush looks so cute and the
+                    nendoroid... someone pls stop me from giving more money to
+                    hoyoverse...
+                  </p>
+                  <hr class="dotted mt-3" />
+                  <div
+                    class="d-flex flex-row flex-wrap justify-content-center mt-3 mb-3 gallery-container"
+                    id="merch_photo_gallery"
+                  ></div>
+                  <hr class="dotted mt-3" />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#fanfic-panel"
+                  aria-expanded="false"
+                  aria-controls="fanfic-panel"
+                >
+                  <i class="fa fa-bookmark me-3" aria-hidden="true"></i>
+                  fanfic recs
+                </button>
+              </h2>
+              <div id="fanfic-panel" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <p class="extra-text">
+                    Although I labelled this fanfic recs, I must emphasize that
+                    my taste in fanfic is extremely questionable i.e. I love
+                    whump and seeing my favs suffer, so this is more of a
+                    collection of fics that I read and enjoyed and want to keep
+                    a record of for the future. I'm also a multi-shipper but
+                    mostly these fics will be bottom!Phainon (or no explicit
+                    content) since this is a dedicated Phainon page after all.
+                    <br />
+                    <br />
+                    <b
+                      >Some of these fics are NSFW so please read the
+                      warnings!</b
+                    >
+                    <br />
+                    <br />
+                    (I'll be adding more fics in the future when I have dug them
+                    up)
+                  </p>
+                  <hr class="dotted mt-3" />
+                  <div class="row justify-content-center">
+                    <div class="fic-container">
+                      <p class="fic-title">
+                        <a href="https://archiveofourown.org/works/67388373"
+                          >aidōs</a
+                        >
+                        by
+                        <a
+                          href="https://archiveofourown.org/users/bittersweetResilience/pseuds/bittersweetResilience"
+                          >bittersweetResilience</a
+                        >
+                      </p>
+                      <br />
+                      <p>
+                        <span class="tags-label">Rating:</span> Teen And Up
+                        Audiences
+                      </p>
+
+                      <p class="fic-tags">
+                        <i
+                          ><span class="tags-label">Tags/ warnings:</span>
+                          Graphic Depictions Of Violence, Anaxa/Phainon,
+                          Alternate Universe - Canon Divergence, Whipping,
+                          Public Humiliation, Blood and Violence, Dubious
+                          Okheman Politics, Hurt Phainon, Whump, Hurt No
+                          Comfort, Creep Lygus</i
+                        >
+                      </p>
+                      <hr />
+                      <p>
+                        <i
+                          >In the names of Talanton and Kephale, the accused
+                          must be allowed to hear the “people's voice” prior to
+                          the execution for a chance at a reduced sentence and
+                          possible pardon.</i
+                        >
+                        <br /><br />
+                        Phainon volunteers to receive Anaxa's punishment.
+                      </p>
+                    </div>
+                    <div class="fic-container">
+                      <p class="fic-title">
+                        <a href="https://archiveofourown.org/works/67240105"
+                          >Ragebaiting Success?</a
+                        >
+                        by
+                        <a
+                          href="https://archiveofourown.org/users/Wooshman/pseuds/Wooshman"
+                          >Wooshman</a
+                        >
+                      </p>
+                      <br />
+                      <p>
+                        <span class="tags-label">Rating:</span> Explicit (NSFW/
+                        18+)
+                      </p>
+                      <p class="fic-tags">
+                        <i
+                          ><span class="tags-label">Tags/ warnings:</span>
+                          Mydei/Phainon, Top Mydei/Bottom Phainon, Canon
+                          Setting, but not canon, this is a crackfic, Phainon
+                          streams, Mydei looks at the comments, Reports the
+                          degenerate ones, Almost gets ragebaited, Goes to
+                          Phainon, Gets a thigh job, and more - Freeform, What a
+                          happy ending, Freaky Mydei, Freaky Phainon, thigh
+                          appreciation</i
+                        >
+                      </p>
+                      <hr />
+                      <p>
+                        Phainon’s streaming again at the Marmoreal Market about
+                        his antique appraisal. As usual, Mydei listens in as he
+                        reads through the comments for any weirdos, reporting
+                        all the disrespectful ones. <br /><br />
+                        Then, a comment suddenly flashes by: “mydei straight af
+                        i would’ve asked for a thigh job if phainon was my
+                        sparring partner” <br /><br />
+                        It stops Mydei in his tracks. What the fuck does that
+                        even mean? <br /><br />
+                        The commenter continues: “i mean mydei spends so much
+                        time with him but is too much of a wimp to do anything.
+                        if i were him i would have jumped phainon by now and
+                        shown him a real calamity” <br /><br />
+                        That’s it. <br /><br />
+                        He presses the report button without hesitation and sets
+                        his teleslate down a little harsher than necessary. The
+                        strange people Phainon attracts sometimes… Mydei feels
+                        bad for him. No one should have to deal with this kind
+                        of garbage just for being… himself. <br /><br />
+                        Before he even realises it, his body is moving on its
+                        own. <br /><br />
+                        He leaves his room and starts heading towards the
+                        market. What awaits him afterwards is something he
+                        doesn’t expect.
+                      </p>
+                    </div>
+                    <div class="fic-container">
+                      <p class="fic-title">
+                        <a href="https://archiveofourown.org/works/64728043"
+                          >Heart Attack</a
+                        >
+                        by
+                        <a
+                          href="https://archiveofourown.org/users/cucina/pseuds/eiodolon"
+                          >eiodolon (cucina)</a
+                        >,
+                        <a
+                          href="https://archiveofourown.org/users/Habitate/pseuds/Habitate"
+                          >Habitate</a
+                        >
+                      </p>
+                      <br />
+                      <p>
+                        <span class="tags-label">Rating:</span> Mature (NSFW/
+                        18+)
+                      </p>
+                      <p class="fic-tags">
+                        <i
+                          ><span class="tags-label">Tags/ warnings:</span>
+                          Mydei/Phainon, Alternate Universe - High School,
+                          Getting Together, Teen Romance, Fluff, Angst, Slight
+                          Violence, Friends to Lovers, Happy Ending, Classic
+                          Tropes, Aglaea is MVP, Idiots in Love, These fucking
+                          teenagers, Mydei is yearning, Phainon is oblivious,
+                          Top Mydei/Bottom Phainon</i
+                        >
+                      </p>
+                      <hr />
+                      <p>
+                        <i>
+                          Anaxagoras smacks the book on top of Mydei’s head. “I
+                          don’t want to see you here again for the rest of the
+                          week.” <br /><br />
+                          The young man looks away, saying nothing. The
+                          headmaster knows Mydei doesn’t want to be here either.
+                          The other guy, however— <br /><br />
+                          “I’m so sorry!” Phainon is slightly bowed, looking
+                          solemnly at the floor. “It’s all my fault.”
+                          <br /><br />
+                          “Mydeimos throwing a chair at you is your fault?”
+                        </i>
+                        <br /><br />
+                        Mydei has been bullying Phainon for years, simply
+                        because the guy clings to him like glue. And yet,
+                        Phainon still does, no matter how hard Mydei tries to
+                        get rid of him. One day, however, Mydei sees Phainon
+                        performing on a stage and that, for some reason, changes
+                        everything.
+                      </p>
+                    </div>
+                  </div>
+                  <hr class="dotted mt-3" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end mb-4">
+            <button
+              class="footer-btn px-3 me-3"
+              onclick="window.scrollTo({top:0,behavior:'smooth'})"
+            >
+              <div
+                class="d-flex flex-row justify-content-between align-items-center pb-1"
+              >
+                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                <span>back to top</span>
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="row justify-content-center mt-2">
-        <a
-          class="shrine-name"
-          href="https://www.youtube.com/watch?v=GaT1GftoqV0"
-          >Phainon Khaslana</a
-        >
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="galleryModal"
+      tabindex="-1"
+      aria-labelledby="galleryModalLabel"
+    >
+      <i
+        class="fa fa-times-circle-o modal-cross"
+        aria-hidden="true"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></i>
+      <div class="modal-nav-container">
+        <i
+          class="fa fa-chevron-left modal-arrow modal-arrow-left"
+          aria-hidden="true"
+          onclick="showNextOrPrevImg(-1);"
+        ></i>
       </div>
-      <div class="row justify-content-center mt-5">
-        <h2 class="press-f" id="f-key" onclick="payRespects();">
-          Press F to pay respects
-        </h2>
-        <p>(he's not dead I just like remembering him)</p>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="d-flex flex-row justify-content-center modal-row">
+            <div class="modal-image-container">
+              <img src="" class="modal-image img-fluid" id="modal-image" />
+              <p id="modal-image-caption">idk some random text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-nav-container">
+        <i
+          class="fa fa-chevron-right modal-arrow modal-arrow-right"
+          aria-hidden="true"
+          onclick="showNextOrPrevImg(1);"
+        ></i>
       </div>
     </div>
 
     <audio id="bg-music" loop src="./assets/coronal-radiance.mp3"></audio>
 
+    <script src="scripts/images.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
