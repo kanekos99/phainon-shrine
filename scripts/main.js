@@ -10,6 +10,9 @@ const modalImgCaption = document.getElementById("modal-image-caption");
 const container = document.getElementById("container");
 const countDisplay = document.getElementById("counter");
 
+const fic_rec_list_name = "#fic-list-container";
+const fic_rec_list = $(fic_rec_list_name);
+
 const sections = ["#extras"];
 
 let counter = 0;
@@ -28,6 +31,7 @@ const imageCategories = [
 const app = {
   init: function () {
     loadImages();
+    loadFics();
   },
 };
 
@@ -255,4 +259,85 @@ function showImage(image) {
   modalImg.onload = function () {
     modalImg.style.display = "block";
   };
+}
+
+/*------------------------ for fanfic recs -------------------------------- */
+
+function loadFics() {
+  fics.forEach((fic) => {
+    let ficAuthor = "";
+
+    fic.authors.forEach((author, index) => {
+      const isLastAuthor = index === fic.authors.length - 1;
+      const authorHTML = `
+        <a href="${author.link}">${author.name}</a>${isLastAuthor ? "" : ", "}
+      `;
+
+      ficAuthor = ficAuthor + authorHTML;
+    });
+
+    const isNSFW = nsfwRating.includes(fic.rating);
+
+    const ficHeading = `
+      <p class="fic-title">
+        <span class="fic-title-text">
+            <span class="me-2 fic-rating ${isNSFW ? "fic-rating-nsfw" : ""}">${fic.rating}</span>
+        <span class="fic-inner-title-text">
+          <a href="${fic.link}"">
+              ${fic.title}
+          </a>
+          by ${ficAuthor}
+        </span>
+        </span>
+        <span class="fic-expand" 
+              data-bs-toggle="collapse"
+              data-bs-target="#fic${fic.id}"
+              onclick="expandFicToggleText(this);">
+              + show more
+        </span>
+        </p>
+    `;
+
+    let ficTags = "";
+
+    fic.tags.forEach((tag, index) => {
+      const isLastTag = index === fic.tags.length - 1;
+      const tagText = `
+        ${tag}${isLastTag ? "" : ", "}
+      `;
+
+      ficTags = ficTags + tagText;
+    });
+
+    const ficBody = `
+      <div class="collapse" id="fic${fic.id}">
+        <br />
+        <p class="fic-tags">
+            <i><span class="tags-label">Tags/ warnings:</span>
+              ${ficTags}
+            </i>
+        </p>
+        <hr />
+        <p>${fic.description}</p>
+      </div>
+    `;
+
+    const ficHTML = `
+      <div class="fic-container">
+        ${ficHeading}
+        ${ficBody}
+      </div>
+    `;
+
+    fic_rec_list.append(ficHTML);
+  });
+}
+
+function expandFicToggleText(toggleText) {
+  console.log(toggleText.innerHTML);
+  if (toggleText.innerHTML.trim() == "+ show more") {
+    toggleText.innerHTML = "- hide";
+  } else {
+    toggleText.innerHTML = "+ show more";
+  }
 }

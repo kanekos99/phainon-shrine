@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  top: 12vh;
+  top: 15vh;
   background-color: rgba(19, 19, 19, 0.9);
   min-height: 70%;
   width: 65vw;
@@ -81,7 +81,7 @@ h2 {
   font-family: "DM Sans";
   cursor: pointer;
   color: rgba(255, 255, 255);
-  opacity: 0.5;
+  opacity: 0.6;
   font-size: 1.2rem;
   transition: ease-in-out 0.1s;
   font-weight: 300;
@@ -90,6 +90,7 @@ h2 {
 
 .press-f-counter {
   font-size: 1rem;
+  opacity: 0.5;
 }
 
 p {
@@ -332,6 +333,12 @@ hr.dotted {
   margin-bottom: 10px;
 }
 
+.fic-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .fic-container p {
   color: #b5b5c0;
   font-weight: 300;
@@ -339,11 +346,39 @@ hr.dotted {
   text-align: left;
 }
 
-.fic-title a {
+.fic-inner-title-text a {
   color: white;
   text-decoration: underline dotted;
   text-decoration-color: #b5b5c0bc;
   font-weight: 600;
+  font-family: "DM Sans";
+}
+
+.fic-expand {
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+}
+
+.fic-expand:hover {
+  opacity: 1;
+  transition: 0.2s ease-in-out;
+}
+
+.fic-rating {
+  font-family: "DM Sans";
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.671);
+  font-size: 0.85rem;
+  background-color: rgb(75, 75, 75);
+  padding: 3px 10px 3px 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.fic-rating-nsfw {
+  color: rgb(255, 255, 255);
+  background-color: rgb(186, 0, 0);
 }
 
 .tags-label {
@@ -535,6 +570,21 @@ hr.dotted {
 
   .footer-btn {
     width: 70%;
+  }
+
+  .fic-inner-title-text {
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+  }
+
+  .fic-title-text {
+    width: 100%;
+  }
+
+  .fic-expand {
+    text-align: left;
+    margin-top: 10px;
   }
 }
 
