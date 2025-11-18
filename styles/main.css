@@ -27,7 +27,7 @@ body {
 .container {
   top: 12vh;
   background-color: rgba(19, 19, 19, 0.9);
-  min-height: 72%;
+  min-height: 70%;
   width: 65vw;
   position: relative;
   border-radius: 15px;
