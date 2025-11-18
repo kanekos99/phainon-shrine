@@ -203,7 +203,7 @@ function loadImages() {
 
       //for neocities
       let externalUrl =
-        "https://kanekos99.github.io/gallery" + image.photo_url.substring(1);
+        "https://kanekos99.github.io/phainon-shrine" + image.photo_url.substring(1);
 
       let galleryClass = "gallery-thumbnail";
 
