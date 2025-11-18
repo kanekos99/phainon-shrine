@@ -33,7 +33,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/phai1.png" />
   </head>
   <body>
-    <div class="container" id="container">
+    <div class="container">
       <a
         class="nav-link"
         href="https://kanekos.neocities.org/"
@@ -54,54 +54,36 @@
         id="bg-music-btn"
       ></i>
       <div id="shrine-container" class="active">
-        <img class="flower-deco-1" src="assets/flower1.png" />
-        <img class="flower-deco-2" src="assets/flower2.png" />
-        <div class="d-flex flex-row flex-wrap justify-content-center">
-          <div class="shrine-img-container my-3">
-            <img
-              src="assets/phai-photo.png"
-              class="shrine-img"
-              onclick="payRespects();"
-            />
-            <p><i>(he's not dead I just like remembering him)</i></p>
-          </div>
-          <div class="shrine-text-container row align-items-center">
-            <div>
-              <div class="row justify-content-center pt-5 start-text-row">
-                <h1>In loving remembrance of:</h1>
-              </div>
-              <div class="row justify-content-center mt-4">
-                <a
-                  class="shrine-name"
-                  href="https://www.youtube.com/watch?v=GaT1GftoqV0"
-                  >Phainon Khaslana</a
-                >
-              </div>
-              <div class="row justify-content-center mt-3">
-                <div>
-                  <h2 class="press-f mt-3" id="f-key" onclick="payRespects();">
-                    Press F to pay respects
-                  </h2>
-                </div>
-                <div>
-                  <h2 class="press-f press-f-counter">
-                    You have paid respects <span id="counter">0</span> times.
-                  </h2>
-                </div>
-              </div>
-              <hr class="dotted mt-5 mx-4" />
-              <div class="row justify-content-center pt-2">
-                <a
-                  href="#extras"
-                  class="extra-link"
-                  onclick="viewMore('#extras');"
-                >
-                  view more
-                  <i class="fa fa-long-arrow-right ms-1" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="row justify-content-center pt-5">
+          <h1>In loving remembrance of:</h1>
+        </div>
+        <div class="row justify-content-center mt-2">
+          <img
+            src="assets/phai-photo.png"
+            class="shrine-img"
+            onclick="payRespects();"
+          />
+        </div>
+        <div class="row justify-content-center mt-2">
+          <a
+            class="shrine-name"
+            href="https://www.youtube.com/watch?v=GaT1GftoqV0"
+            >Phainon Khaslana</a
+          >
+        </div>
+        <div class="row justify-content-center mt-4">
+          <h2 class="press-f mt-3" id="f-key" onclick="payRespects();">
+            Press F to pay respects
+          </h2>
+          <p><i>(he's not dead I just like remembering him)</i></p>
+          <a
+            href="#extras"
+            class="extra-link mt-3"
+            onclick="viewMore('#extras');"
+          >
+            view more
+            <i class="fa fa-long-arrow-right ms-1" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
       <div id="extras" style="display: none">

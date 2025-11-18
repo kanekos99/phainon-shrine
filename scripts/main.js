@@ -7,8 +7,12 @@ const merch_photo_gallery = $(merch_photo_gallery_name);
 const modalImg = document.getElementById("modal-image");
 const modalImgCaption = document.getElementById("modal-image-caption");
 
+const container = document.getElementById("container");
+const countDisplay = document.getElementById("counter");
+
 const sections = ["#extras"];
 
+let counter = 0;
 
 const imageCategories = [
   {
@@ -61,6 +65,10 @@ function payRespects() {
       img.remove();
       pressF.style.opacity = "0.5";
     });
+
+    //increment counter
+    counter++;
+    countDisplay.innerHTML = counter;
   }
 }
 
@@ -122,6 +130,8 @@ function viewMore(sectionId) {
   //show selected section
   selectedSection.show();
   selectedSection.addClass("active");
+  container.classList.add("container-extra");
+
   location.hash = sectionId;
 
   //show updated link text
@@ -154,6 +164,8 @@ function backToMain(backBtn) {
     //show home section
     main_section.show();
     main_section.addClass("active");
+    container.classList.remove("container-extra");
+
     location.hash = "";
 
     //hid scroll
